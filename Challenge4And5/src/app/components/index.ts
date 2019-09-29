@@ -1,0 +1,1 @@
+export * from "./scopeParser/scopeParser.component";
