@@ -49,7 +49,7 @@ namespace ChallengeThree
             }
             else
             {
-                itemSummary.Summary = "";
+                itemSummary.Summary = "There are no sub-items";
             }
             return itemSummary;
         }
