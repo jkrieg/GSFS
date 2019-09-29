@@ -62,7 +62,7 @@ namespace ChallengeTwo
         public void ProducesNumericResultForCorrectBandConfiguration()
         {
             var propertyDecoder = new ResisterPropertyDecoder();
-            Assert.AreEqual(propertyDecoder.CalculateOhmValue("GN", "BU", "BN", "BN"), 560); //560 ohms +/- 1%
+            Assert.AreEqual(propertyDecoder.CalculateOhmValue("GN", "BU", "BN", "BN"), 565); //560 ohms + 1% truncating the decimal per Json's feedback.
         }
         [TestMethod]
         public void WillNotOverflowOnCalcuation()
@@ -74,11 +74,11 @@ namespace ChallengeTwo
             }
             catch(ArithmeticException exc)
             {
-                Assert.Fail();
+                Assert.Fail(exc.Message);
             }
             catch (Exception exc)
             {
-
+                Assert.Fail(exc.Message);
             }
         }
     }

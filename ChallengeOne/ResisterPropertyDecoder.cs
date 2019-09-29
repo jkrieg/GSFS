@@ -35,7 +35,7 @@ namespace ChallengeOne
             var validationErrorMessage = validationErrorMessageBuilder.ToString().Trim();
             if (validationErrorMessage.Length > 0) throw new Exception(validationErrorMessage);
 
-            return Convert.ToInt32(Math.Floor((10 * primaryBand.SignificantDigit.Value + secondaryBand.SignificantDigit.Value) * multiplierBand.Multiplier.Value));
+            return Convert.ToInt32(Math.Floor((10 * primaryBand.SignificantDigit.Value + secondaryBand.SignificantDigit.Value) * multiplierBand.Multiplier.Value *(1+toleranceBand.TolerancePercent.Value/100)));
         }
     }
 }
